@@ -22,4 +22,4 @@ git push -u origin main
 1. Go to doc - https://playwright.dev/docs/ci-intro
 2. Create folders .github and workflows
 3. Then create a .yml file. It have any name like playwright.yml
-4. Then define yml file
+4. Then define yml file.
