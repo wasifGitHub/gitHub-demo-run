@@ -7,7 +7,7 @@ test('Login Swag Fixture', async ({ loginFixture,page }) => {
   loginFixture;
   const homePage = new Homepage(page)
   await homePage.addItemToCart(homePage.addToCartBtn);
-  await page.getByRole('button',{name:'Remove'}).first().waitFor({state:'visible'});
+  await page.getByRole('button',{name:'RemoveShouldFail'}).first().waitFor({state:'visible'});
   await page.waitForTimeout(3000);
 
 });
