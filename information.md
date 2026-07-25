@@ -18,3 +18,8 @@ git remote add origin https://github.com/wasifGitHub/gitHub-demo-run.git
 git branch -M main
 git push -u origin main
 
+## CICD
+1. Go to doc - https://playwright.dev/docs/ci-intro
+2. Create folders .github and workflows
+3. Then create a .yml file. It have any name like playwright.yml
+4. Then define yml file
