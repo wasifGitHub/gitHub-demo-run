@@ -1,13 +1,14 @@
 import { test } from '../fixtures/loadFixture';
-import {Page} from '@playwright/test';
+import {expect, Page} from '@playwright/test';
 import Homepage from '../pages/homepage';
 import LoginPage from '../pages/loginPage';
+import tags from '../data/tags.json';
 
-test('Login Swag Fixture', async ({ loginFixture,page }) => {
+test.skip('Login Swag Fixture', async ({ loginFixture,page }) => {
   loginFixture;
   const homePage = new Homepage(page)
   await homePage.addItemToCart(homePage.addToCartBtn);
-  await page.getByRole('button',{name:'RemoveShouldFail'}).first().waitFor({state:'visible'});
+  await page.getByRole('button',{name:'Remove'}).first().waitFor({state:'visible'});
   await page.waitForTimeout(3000);
 
 });
@@ -41,3 +42,44 @@ test.skip('Login Swag POM', async({page}) => {
 //     await page.getByRole('button',{name:'Login'}).first().waitFor({state:'visible'});
 //   });
 // });
+
+test('Mock API UI', async({page}) => {
+  page.route('**/*/api/tags', async (route) => {
+    // Print original response
+    const response = await route.fetch()
+    const body = await response.json();
+    console.log('Original response: ',body);
+
+    // Override respponse
+    if(route.request().method().includes('GET')){
+      await route.fulfill({
+        body: JSON.stringify(tags)
+      });
+      console.log(`Changed response`,tags);
+    } else {
+      await route.continue();
+    }
+  })
+  await page.goto(`https://conduit.bondaracademy.com/`);
+  await expect(page.locator(`//div[@class='tag-list']`)).toBeVisible();
+
+  // What are the diff condition used here
+  // method()       = GET, POST, PUT, DELETE
+  // url()          = which API/page/file
+  // resourceType() = document, xhr, fetch, image, script, stylesheet, font
+
+  // 1. Method condition
+  // if (route.request().method() === "POST") {}
+
+  // 2. URL contains API path
+  // if (route.request().url().includes("/api/users")) {}
+
+  // 3. Resource type
+  // if (route.request().resourceType() === "image") {}
+
+  // 
+
+
+
+
+});

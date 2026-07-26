@@ -23,3 +23,6 @@ git push -u origin main
 2. Create folders .github and workflows
 3. Then create a .yml file. It have any name like playwright.yml
 4. Then define yml file.
+5. To have some extra insights on failure on github Actions use below in playwright.config.ts
+reporter: [['html'],['github']],
+It will show extra insights in Annotations
