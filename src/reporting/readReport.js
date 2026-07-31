@@ -1,4 +1,4 @@
-const report = require("../reports/results.json")
+const report = require("../reports/json/results.json")
 
 // Print summary
 console.log("===== Test Summary =====");

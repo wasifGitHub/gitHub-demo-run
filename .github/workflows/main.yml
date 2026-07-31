@@ -29,5 +29,5 @@ jobs:
       if: ${{ !cancelled() }}
       with:
         name: json-report
-        path: src/reports/result.json
+        path: src/reports/results.json
         retention-days: 30

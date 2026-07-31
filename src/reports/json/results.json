@@ -42,7 +42,9 @@
     "reporter": [
       [
         "html",
-        null
+        {
+          "outputFolder": "src/reports/html"
+        }
       ],
       [
         "github",
@@ -51,7 +53,7 @@
       [
         "json",
         {
-          "outputFile": "src/reports/results.json"
+          "outputFile": "src/reports/json/results.json"
         }
       ]
     ],
@@ -104,7 +106,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-31T19:34:56.001Z",
+                  "startTime": "2026-07-31T19:46:18.460Z",
                   "annotations": [
                     {
                       "type": "skip",
@@ -156,7 +158,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-31T19:34:56.003Z",
+                  "startTime": "2026-07-31T19:46:18.463Z",
                   "annotations": [
                     {
                       "type": "skip",
@@ -194,7 +196,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 4961,
+                  "duration": 4505,
                   "errors": [],
                   "stdout": [
                     {
@@ -206,7 +208,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-07-31T19:34:56.159Z",
+                  "startTime": "2026-07-31T19:46:18.612Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -230,8 +232,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-31T19:34:55.992Z",
-    "duration": 5311.813,
+    "startTime": "2026-07-31T19:46:18.451Z",
+    "duration": 4843.317,
     "expected": 1,
     "skipped": 2,
     "unexpected": 0,
