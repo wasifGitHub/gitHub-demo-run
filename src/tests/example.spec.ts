@@ -48,20 +48,29 @@ test('Mock API UI', async({page}) => {
     // Print original response
     const response = await route.fetch()
     const body = await response.json();
-    console.log('Original response: ',body);
+    // console.log('Original response: ',body);
 
     // Override respponse
     if(route.request().method().includes('GET')){
       await route.fulfill({
         body: JSON.stringify(tags)
       });
-      console.log(`Changed response`,tags);
+      // console.log(`Changed response`,tags);
     } else {
       await route.continue();
     }
-  })
+  });
+
+  // We can also use waitForResponse to access the api 
+  const responsePromise = page.waitForResponse(resp => resp.url().includes('api/tags') && resp.status() === 200);
+  // waitForRequest is used to check client request payload , headers or method
+  const requestPromise = page.waitForRequest('**/*/api/tags');
   await page.goto(`https://conduit.bondaracademy.com/`);
   await expect(page.locator(`//div[@class='tag-list']`)).toBeVisible();
+  const resp = await (await responsePromise).json();
+  // console.log(resp);
+  const req =  await (await requestPromise).postData()
+  console.log(req);
 
   // What are the diff condition used here
   // method()       = GET, POST, PUT, DELETE
@@ -76,10 +85,5 @@ test('Mock API UI', async({page}) => {
 
   // 3. Resource type
   // if (route.request().resourceType() === "image") {}
-
-  // 
-
-
-
 
 });
