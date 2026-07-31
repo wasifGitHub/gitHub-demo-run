@@ -68,7 +68,7 @@ test('Mock API UI', async({page}) => {
   await page.goto(`https://conduit.bondaracademy.com/`);
   await expect(page.locator(`//div[@class='tag-list']`)).toBeVisible();
   const resp = await (await responsePromise).json();
-  // console.log(resp);
+  console.log(resp);
   const req =  await (await requestPromise).postData()
   console.log(req);
 
