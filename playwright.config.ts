@@ -26,7 +26,7 @@ export default defineConfig({
     ['html'],
     ['github'],
     ['json', {
-      outputFile: 'reports/results.json'
+      outputFile: 'src/reports/results.json'
     }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */

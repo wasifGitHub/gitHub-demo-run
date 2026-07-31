@@ -40,12 +40,76 @@ Retry information
 reporter: [
   ['html'],
   ['json', {
-    outputFile: 'reports/results.json'
+    outputFile: 'src/reports/results.json'
   }]
 ]
 
 2. Step 2: Run Tests
 - You'll get a folder like: reports/resultsjson
+- Json contains:
+{
+  "config": {},
+  "suites": [],
+  "errors": [],
+  "stats": {}
+}
+(a) config :
+. Contains the Playwright configuration used during the test run.
+"config": {
+  "workers": 4,
+  "retries": 1,
+  "timeout": 30000
+}
+. It tells you:
+How many workers ran
+Retry count
+Timeout
+Browser
+Projects
+Reporter configuration
+
+(b) suites:
+- It contains all your:
+Test files
+Test suites
+Test cases
+Status
+Duration
+Errors
+
+- Exxample
+{
+  "title": "Login Tests",
+  "specs": [
+    {
+      "title": "Valid Login",
+      "tests": [
+        {
+          "status": "passed",
+          "duration": 2500
+        }
+      ]
+    }
+  ]
+}
+
+- Here you can see:
+Test name
+Pass/Fail
+Execution time
+
+(c) errors
+- If Playwright crashes before executing tests, you'll find those errors here.
+
+(d) stats
+- Contains summary information.
+{
+  "expected": 10,
+  "unexpected": 2,
+  "flaky": 1,
+  "skipped": 0
+}
+This is useful for quickly seeing the outcome of a test run.
 
 3. Step 3: Open the JSON File
 - Why JSON?
@@ -66,4 +130,22 @@ or even email that summary to the team.
 - Interview Questions
 Q1. Why do we use a JSON reporter?
 Answer:
-The JSON reporter generates structured test results in JSON format. It's useful for integrating Playwright with CI/CD pipelines, dashboards, custom scripts, and other reporting tools.
+- JSON Reporter generates test results in a structured format that can be consumed by other applications, dashboards, CI/CD pipelines, or custom scripts.
+- Read results.json
+- Count passed and failed tests
+- Send a Slack notification
+- Send an email
+- Update a dashboard
+- Upload results to another tool
+
+Q2. Real Project Example
+Answer:
+- Instead of opening the HTML report, you can read results.json.
+const report = require("./reports/results.json");
+console.log(report.stats);
+
+ - This is how dashboards and automation tools process test results.
+
+Q3. Does the JSON Reporter create an HTML report?
+Answer:
+No. It only generates a JSON file. If you need an HTML report, you should configure the HTML reporter separately.
