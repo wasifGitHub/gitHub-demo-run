@@ -22,12 +22,12 @@ jobs:
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-report
+        name: html-report
         path: src/reports/html
         retention-days: 30
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
         name: json-report
-        path: src/reports/results.json
+        path: src/reports/json/results.json
         retention-days: 30
