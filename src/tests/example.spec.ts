@@ -3,6 +3,7 @@ import {expect, Page} from '@playwright/test';
 import Homepage from '../pages/homepage';
 import LoginPage from '../pages/loginPage';
 import tags from '../data/tags.json';
+import { printSummary, getStats,getSuites } from '../utils/reportUtil';
 
 test.skip('Login Swag Fixture', async ({ loginFixture,page }) => {
   loginFixture;
@@ -43,7 +44,7 @@ test.skip('Login Swag POM', async({page}) => {
 //   });
 // });
 
-test('Mock API UI', async({page}) => {
+test.skip('Mock API UI', async({page}) => {
   page.route('**/*/api/tags', async (route) => {
     // Print original response
     const response = await route.fetch()
@@ -87,3 +88,9 @@ test('Mock API UI', async({page}) => {
   // if (route.request().resourceType() === "image") {}
 
 });
+
+test('Reporting', async({}) => {
+  printSummary();
+  console.log('Get stats:', getStats());
+
+})
