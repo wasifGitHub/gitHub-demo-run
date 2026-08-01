@@ -44,7 +44,7 @@ test.skip('Login Swag POM', async({page}) => {
 //   });
 // });
 
-test.skip('Mock API UI', async({page}) => {
+test('Mock API UI', async({page}) => {
   page.route('**/*/api/tags', async (route) => {
     // Print original response
     const response = await route.fetch()

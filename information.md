@@ -213,6 +213,14 @@ reporter: [
   }]
 ]
 
+Add it in yml file:
+- uses: actions/upload-artifact@v4
+  if: ${{ !cancelled() }}
+  with:
+    name: junit-report
+    path: src/reports/junit/results.xml
+    retention-days: 30
+
 # Step 2: Run the tests
 Now you should see:
 src/

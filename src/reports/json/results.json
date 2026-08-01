@@ -3,8 +3,7 @@
     "argv": [
       "/usr/local/bin/node",
       "/Users/wasif/Desktop/Wasif/playwright/node_modules/.bin/playwright",
-      "test",
-      "example.spec.ts"
+      "test"
     ],
     "configFile": "/Users/wasif/Desktop/Wasif/playwright/playwright.config.ts",
     "rootDir": "/Users/wasif/Desktop/Wasif/playwright/src/tests",
@@ -55,6 +54,12 @@
         "json",
         {
           "outputFile": "src/reports/json/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "src/reports/junit/results.xml"
         }
       ]
     ],
@@ -107,7 +112,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T13:50:07.955Z",
+                  "startTime": "2026-08-01T17:51:08.036Z",
                   "annotations": [
                     {
                       "type": "skip",
@@ -159,7 +164,7 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T13:50:07.957Z",
+                  "startTime": "2026-08-01T17:51:08.038Z",
                   "annotations": [
                     {
                       "type": "skip",
@@ -188,50 +193,45 @@
           "tests": [
             {
               "timeout": 30000,
-              "annotations": [
-                {
-                  "type": "skip",
-                  "location": {
-                    "file": "/Users/wasif/Desktop/Wasif/playwright/src/tests/example.spec.ts",
-                    "line": 47,
-                    "column": 6
-                  }
-                }
-              ],
-              "expectedStatus": "skipped",
+              "annotations": [],
+              "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": -1,
-                  "parallelIndex": -1,
-                  "status": "skipped",
-                  "duration": 0,
+                  "workerIndex": 0,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 9345,
                   "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-08-01T13:50:07.957Z",
-                  "annotations": [
+                  "stdout": [
                     {
-                      "type": "skip",
-                      "location": {
-                        "file": "/Users/wasif/Desktop/Wasif/playwright/src/tests/example.spec.ts",
-                        "line": 47,
-                        "column": 6
-                      }
+                      "text": "{ tags: [ \u001b[32m'Test'\u001b[39m, \u001b[32m'Blog'\u001b[39m, \u001b[32m'Coding'\u001b[39m, \u001b[32m'YouTube'\u001b[39m, \u001b[32m'GitHub'\u001b[39m ] }\n"
+                    },
+                    {
+                      "text": "\u001b[1mnull\u001b[22m\n"
                     }
                   ],
-                  "attachments": []
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-08-01T17:51:08.202Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/wasif/Desktop/Wasif/playwright/test-results/example-Mock-API-UI-chromium/test-finished-1.png"
+                    }
+                  ]
                 }
               ],
-              "status": "skipped"
+              "status": "expected"
             }
           ],
           "id": "a30a6eba6312f6b87ea5-7116dadba1fb7182fedf",
           "file": "example.spec.ts",
           "line": 47,
-          "column": 6
+          "column": 5
         },
         {
           "title": "Reporting",
@@ -246,7 +246,7 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 1,
                   "parallelIndex": 3,
                   "status": "passed",
                   "duration": 3,
@@ -271,18 +271,18 @@
                       "text": "Flaky Tests     : 0\n"
                     },
                     {
-                      "text": "Execution Time  : 0.23 ms\n"
+                      "text": "Execution Time  : 227.704 ms\n"
                     },
                     {
                       "text": "=============================================\n\n"
                     },
                     {
-                      "text": "Get stats: {\n  startTime: \u001b[32m'2026-08-01T13:48:01.645Z'\u001b[39m,\n  duration: \u001b[33m232.089\u001b[39m,\n  expected: \u001b[33m1\u001b[39m,\n  skipped: \u001b[33m3\u001b[39m,\n  unexpected: \u001b[33m0\u001b[39m,\n  flaky: \u001b[33m0\u001b[39m\n}\n"
+                      "text": "Get stats: {\n  startTime: \u001b[32m'2026-08-01T13:50:07.909Z'\u001b[39m,\n  duration: \u001b[33m227.704\u001b[39m,\n  expected: \u001b[33m1\u001b[39m,\n  skipped: \u001b[33m3\u001b[39m,\n  unexpected: \u001b[33m0\u001b[39m,\n  flaky: \u001b[33m0\u001b[39m\n}\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T13:50:08.111Z",
+                  "startTime": "2026-08-01T17:51:08.200Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -300,10 +300,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-01T13:50:07.909Z",
-    "duration": 227.704,
-    "expected": 1,
-    "skipped": 3,
+    "startTime": "2026-08-01T17:51:08.027Z",
+    "duration": 9749.406,
+    "expected": 2,
+    "skipped": 2,
     "unexpected": 0,
     "flaky": 0
   }

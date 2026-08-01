@@ -31,3 +31,9 @@ jobs:
         name: json-report
         path: src/reports/json/results.json
         retention-days: 30
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+      name: junit-report
+      path: src/reports/junit/results.xml
+      retention-days: 30
