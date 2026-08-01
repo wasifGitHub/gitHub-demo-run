@@ -231,7 +231,7 @@ src/
          └── results.xml
 
 # Step 3: Open results.xml
-You'll see XML similar to this:
+You will see XML similar to this:
 <testsuites>
   <testsuite name="login.spec.ts" tests="2" failures="1">
     <testcase
