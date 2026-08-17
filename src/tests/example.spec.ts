@@ -4,6 +4,7 @@ import Homepage from '../pages/homepage';
 import LoginPage from '../pages/loginPage';
 import tags from '../data/tags.json';
 import { printSummary, getStats,getSuites } from '../utils/reportUtil';
+// import * as allure from "allure-js-commons";
 
 test.skip('Login Swag Fixture', async ({ loginFixture,page }) => {
   loginFixture;
@@ -90,6 +91,7 @@ test('Mock API UI', async({page}) => {
 });
 
 test('Reporting', async({}) => {
+  console.log('Printing report summary');
   printSummary();
   console.log('Get stats:', getStats());
 

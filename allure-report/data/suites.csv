@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1","Reporting","chromium","2026-08-02","passed","2026-08-02","","example.spec.ts","",""
+"","1","Login Swag Fixture","chromium","2026-08-02","skipped","2026-08-02","","example.spec.ts","",""
+"","3576","Mock API UI","chromium","2026-08-02","passed","2026-08-02","","example.spec.ts","",""
+"","1","Login Swag POM","chromium","2026-08-02","skipped","2026-08-02","","example.spec.ts","",""

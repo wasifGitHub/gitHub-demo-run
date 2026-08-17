@@ -1,50 +1,10 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="2" errors="0" time="9.749406">
-<testsuite name="example.spec.ts" timestamp="2026-08-01T17:51:08.036Z" hostname="chromium" tests="4" failures="0" skipped="2" time="9.348" errors="0">
-<testcase name="Login Swag Fixture" classname="example.spec.ts">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Login Swag POM" classname="example.spec.ts">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Mock API UI" classname="example.spec.ts" time="9.345">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="2.8605989999999997">
+<testsuite name="testing.spec.ts" timestamp="2026-08-17T06:11:03.671Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.535" errors="0">
+<testcase name="Testing" classname="testing.spec.ts" time="2.535">
 <system-out>
-<![CDATA[{ tags: [ [32m'Test'[39m, [32m'Blog'[39m, [32m'Coding'[39m, [32m'YouTube'[39m, [32m'GitHub'[39m ] }
-[1mnull[22m
+<![CDATA[open
 
-[[ATTACHMENT|../../../test-results/example-Mock-API-UI-chromium/test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="Reporting" classname="example.spec.ts" time="0.003">
-<system-out>
-<![CDATA[
-========== Playwright Test Summary ==========
-Total Tests     : 4
-Passed Tests    : 1
-Failed Tests    : 0
-Skipped Tests   : 3
-Flaky Tests     : 0
-Execution Time  : 227.704 ms
-=============================================
-
-Get stats: {
-  startTime: [32m'2026-08-01T13:50:07.909Z'[39m,
-  duration: [33m227.704[39m,
-  expected: [33m1[39m,
-  skipped: [33m3[39m,
-  unexpected: [33m0[39m,
-  flaky: [33m0[39m
-}
+[[ATTACHMENT|../../../test-results/testing-Testing-chromium/test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>

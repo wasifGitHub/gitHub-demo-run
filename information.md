@@ -250,3 +250,88 @@ You will see XML similar to this:
     </testcase>
   </testsuite>
 </testsuites>
+
+///////////////////////////////////////////////////////////
+## Module 3: Allure Report ⭐⭐⭐⭐
+# What is Allure?
+Allure is an advanced reporting framework that provides:
+Beautiful UI
+Screenshots
+Videos
+Trace links
+Test history
+Categories
+Environment details
+Steps
+Attachments
+Trend analysis
+
+# Understand how Allure works because it's different from the other reporters.
+1. With HTML:
+Playwright -> HTML Report
+2. With JSON:
+Playwright -> results.json
+3. With JUnit:
+Playwright -> results.xml
+4. But Allure works in two steps.
+Playwright -> allure-results/ -> Allure CLI -> Beautiful Report
+
+5. This is one of the most common interview questions:
+Notice that Playwright does not directly generate the HTML report.
+Instead, it first generates raw result files.
+Then the Allure CLI converts those files into the final report.
+
+# Why do companies prefer Allure?
+| Feature          | HTML | JSON    | JUnit   | Allure |
+| ---------------- | ---- | ------- | ------- | ------ |
+| Human readable   | ✅    | ❌       | ❌       | ✅      |
+| Machine readable | ❌    | ✅       | ✅       | ✅      |
+| Screenshots      | ❌    | Limited | ❌       | ✅      |
+| Videos           | ❌    | ❌       | ❌       | ✅      |
+| Trace            | ❌    | ❌       | ❌       | ✅      |
+| Categories       | ❌    | ❌       | ❌       | ✅      |
+| History          | ❌    | ❌       | CI only | ✅      |
+| Trends           | ❌    | ❌       | CI only | ✅      |
+
+# Folder structure
+After running Playwright you'll get:
+allure-results/
+    xxxxx-result.json
+    xxxxx-container.json
+    environment.properties
+
+# Steps 1:
+1. Install the required packages:
+npm install -D allure-playwright
+
+2. Install the Allure command-line tool:
+npm install -D allure-commandline
+
+# Steps 2: Configure Playwright
+1. Open your playwright.config.ts.
+reporter: [
+  ['html', {
+    outputFolder: 'src/reports/html'
+  }],
+  ['github'],
+  ['json', {
+    outputFile: 'src/reports/json/results.json'
+  }],
+  ['junit', {
+    outputFile: 'src/reports/junit/results.xml'
+  }],
+  ['allure-playwright', {
+    outputFolder: 'allure-results'
+  }]
+]
+
+# Step 3: Generate the HTML report
+1. npx allure generate allure-results --clean -o allure-report
+
+# step 4: Open it:
+npx allure open allure-report
+
+# Interview Question ⭐⭐⭐⭐⭐
+Q1. Why use Allure if Playwright already has an HTML report?
+Answer:
+Playwright HTML reports are excellent for basic execution results, but Allure provides richer reporting features such as custom steps, screenshots, videos, traces, environment information, categories, and historical trends. These features make debugging and reporting much more effective, especially in enterprise projects.
