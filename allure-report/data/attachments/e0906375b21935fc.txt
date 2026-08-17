@@ -1,0 +1,18 @@
+
+========== Playwright Test Summary ==========
+Total Tests     : 4
+Passed Tests    : 2
+Failed Tests    : 0
+Skipped Tests   : 2
+Flaky Tests     : 0
+Execution Time  : 9749.406 ms
+=============================================
+
+Get stats: {
+  startTime: '2026-08-01T17:51:08.027Z',
+  duration: 9749.406,
+  expected: 2,
+  skipped: 2,
+  unexpected: 0,
+  flaky: 0
+}
